@@ -5,7 +5,8 @@ const path = require('path');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+    console.log(await require('./methods/getqueue.js')());
     res.render('app');
 });
 
