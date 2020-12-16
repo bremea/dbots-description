@@ -8,8 +8,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.get('/', async (req, res) => {
-    res.set('Content-Type', 'text/html');
-    res.send(fs.readFileSync(__dirname + '/queuescrape/index.html'));
+    const queue = await getqueue();
+    res.redirect('/' + queue[0]);
 });
 
 app.listen(3000, () => {
