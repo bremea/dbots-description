@@ -6,5 +6,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log(`App is live at http://localhost:${PORT}/`);
+  console.log('App is live at http://localhost:3000/');
 });
